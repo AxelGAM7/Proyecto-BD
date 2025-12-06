@@ -16,7 +16,7 @@ public class Principal extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Principal.class.getName());
     private DefaultTableModel m;
     private SqlLlamadas querys;
-    private Thread timeStart = new Thread(new UpdateTime());
+    private Thread timeStart = new Thread(new ActualizarTiempo());
 
     
     public Principal() {
@@ -31,16 +31,18 @@ public class Principal extends javax.swing.JFrame {
         timeStart.start();
     }//handleTime
     
-    private class UpdateTime implements Runnable{
+    private class ActualizarTiempo implements Runnable{
 
         @Override
         public void run() {
-            try {
+            while(true){
+                try {
                 txtFechaR.setText(""+LocalDateTime.now());
-                Thread.sleep(1000);
+                Thread.sleep(1000*60);
             } catch (InterruptedException ex) {
                 System.getLogger(Principal.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
             }
+            }//while
         }
         
     }
