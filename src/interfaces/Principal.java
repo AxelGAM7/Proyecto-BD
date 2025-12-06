@@ -17,7 +17,7 @@ public class Principal extends javax.swing.JFrame {
     private DefaultTableModel m;
     private SqlLlamadas querys;
     private Thread timeStart = new Thread(new ActualizarTiempo());
-
+    private String hola = "hola";
     
     public Principal() {
         initComponents();
