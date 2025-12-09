@@ -135,6 +135,94 @@ public class SqlLlamadas {
             return false;
         }//
     }//actualizarReservacion
+    
+    private java.sql.Date toSQL(LocalDate fecha) {
+        return (fecha == null) ? null : java.sql.Date.valueOf(fecha);
+    }
+
+    
+    public ResultSet buscarReservacionesConFiltros(
+        Integer reservacionID,
+        Integer clienteID,
+        Integer empleadoID,
+        LocalDate frDesde,
+        LocalDate frHasta,
+        LocalDate feDesde,
+        LocalDate feHasta,
+        LocalDate fsDesde,
+        LocalDate fsHasta,
+        String estado
+    ) {
+        try {
+            Connection cn = Conexion.getConnection();
+
+            CallableStatement cs = cn.prepareCall("{CALL BuscarReservacionesConFiltros(?,?,?,?,?,?,?,?,?,?)}");
+
+            // INT
+            if (reservacionID == null) cs.setNull(1, java.sql.Types.INTEGER);
+            else cs.setInt(1, reservacionID);
+
+            if (clienteID == null) cs.setNull(2, java.sql.Types.INTEGER);
+            else cs.setInt(2, clienteID);
+
+            if (empleadoID == null) cs.setNull(3, java.sql.Types.INTEGER);
+            else cs.setInt(3, empleadoID);
+
+            // LocalDate → SQL Date
+            cs.setObject(4, toSQL(frDesde));
+            cs.setObject(5, toSQL(frHasta));
+            cs.setObject(6, toSQL(feDesde));
+            cs.setObject(7, toSQL(feHasta));
+            cs.setObject(8, toSQL(fsDesde));
+            cs.setObject(9, toSQL(fsHasta));
+
+            // Estado
+            if (estado == null || estado.equals("Todos"))
+                cs.setNull(10, java.sql.Types.NVARCHAR);
+            else
+                cs.setString(10, estado);
+
+            return cs.executeQuery();
+
+        } catch (Exception e) {
+            System.out.println("Error SP: " + e.getMessage());
+            return null;
+        }
+    }
+
+    
+    
+    public boolean actualizarReservacion(int reservacionID, int clienteID, int empleadoID,
+        LocalDate fechaEntrada, LocalDate fechaSalida, String estado) {
+
+        String sql = "UPDATE Reservaciones SET "
+                + "ClienteID = ?, "
+                + "EmpleadoID = ?, "
+                + "FechaEntrada = ?, "
+                + "FechaSalida = ?, "
+                + "Estado = ? "
+                + "WHERE ReservacionID = ?";  
+
+        try (Connection conn = Conexion.getConnection(); 
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, clienteID);         
+            pstmt.setInt(2, empleadoID);         
+            pstmt.setDate(3, java.sql.Date.valueOf(fechaEntrada)); 
+            pstmt.setDate(4, java.sql.Date.valueOf(fechaSalida));   
+            pstmt.setString(5, estado);         
+            pstmt.setInt(6, reservacionID);      
+
+            int filasAfectadas = pstmt.executeUpdate();
+            System.out.println(filasAfectadas);
+            return filasAfectadas > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar reservación: " + e.getMessage());
+            e.printStackTrace();  
+            return false;
+        }
+    }//actualizarReservacion
 
     public boolean eliminarReservacion(int reservacionID) {
         String sql = "DELETE FROM Reservaciones WHERE ReservacionID = ?";
@@ -199,5 +287,65 @@ public class SqlLlamadas {
             System.err.println("Error: " + e.toString());
         }
         return -1;
+    }
+    
+    public ResultSet buscarReservacionesConFiltros(
+        Integer reservacionID,
+        Integer clienteID,
+        Integer empleadoID,
+        String fechaReservacionDesde,
+        String fechaReservacionHasta,
+        String fechaEntradaDesde,
+        String fechaEntradaHasta,
+        String fechaSalidaDesde,
+        String fechaSalidaHasta,
+        String estado
+    ) {
+        try {
+            Connection cn = Conexion.getConnection();
+            CallableStatement cs = cn.prepareCall("{CALL BuscarReservacionesConFiltros(?,?,?,?,?,?,?,?,?,?)}");
+
+            // INT
+            if (reservacionID == null) cs.setNull(1, java.sql.Types.INTEGER);
+            else cs.setInt(1, reservacionID);
+
+            if (clienteID == null) cs.setNull(2, java.sql.Types.INTEGER);
+            else cs.setInt(2, clienteID);
+
+            if (empleadoID == null) cs.setNull(3, java.sql.Types.INTEGER);
+            else cs.setInt(3, empleadoID);
+
+            // DATETIME (SQL espera DATETIME, le enviamos String convertida)
+            if (fechaReservacionDesde == null) cs.setNull(4, java.sql.Types.VARCHAR);
+            else cs.setString(4, fechaReservacionDesde);
+
+            if (fechaReservacionHasta == null) cs.setNull(5, java.sql.Types.VARCHAR);
+            else cs.setString(5, fechaReservacionHasta);
+
+            // DATE
+            if (fechaEntradaDesde == null) cs.setNull(6, java.sql.Types.VARCHAR);
+            else cs.setString(6, fechaEntradaDesde);
+
+            if (fechaEntradaHasta == null) cs.setNull(7, java.sql.Types.VARCHAR);
+            else cs.setString(7, fechaEntradaHasta);
+
+            if (fechaSalidaDesde == null) cs.setNull(8, java.sql.Types.VARCHAR);
+            else cs.setString(8, fechaSalidaDesde);
+
+            if (fechaSalidaHasta == null) cs.setNull(9, java.sql.Types.VARCHAR);
+            else cs.setString(9, fechaSalidaHasta);
+
+            // Estado
+            if (estado == null || estado.equals("Selecciona")) 
+                cs.setNull(10, java.sql.Types.NVARCHAR);
+            else 
+                cs.setString(10, estado);
+
+            return cs.executeQuery();
+
+        } catch (Exception e) {
+            System.out.println("Error en filtro: " + e.getMessage());
+            return null;
+        }
     }
 }//SqlLlamadas

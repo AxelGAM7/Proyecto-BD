@@ -46,40 +46,48 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblFechaSalida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblEntrada" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblReservacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblFechaRegistro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtReservacion" pref="231" max="32767" attributes="0"/>
+                                              <Component id="cmbCliente" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cmbEmpleado" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtFechaR" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtFechaS" min="-2" pref="231" max="-2" attributes="0"/>
-                                          <Component id="txtFechaE" alignment="0" min="-2" pref="231" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblFechaSalida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblEntrada" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtFechaS" pref="231" max="32767" attributes="0"/>
+                                              <Component id="txtFechaE" max="32767" attributes="0"/>
+                                              <Component id="cmbEstado" alignment="1" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
+                                      <Component id="lblEstado" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblReservacion" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblFechaRegistro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtFechaR" pref="231" max="32767" attributes="0"/>
-                                          <Component id="txtReservacion" pref="231" max="32767" attributes="0"/>
-                                          <Component id="cmbCliente" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cmbEmpleado" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblEstado" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtEstado" min="-2" pref="231" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblWFechaE" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWFechaR" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWFechaS" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWEstado" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWEmpleado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWFechasInvalidas" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -88,14 +96,13 @@
                                   <Component id="btnInsertar" min="-2" pref="81" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="btnEliminar" min="-2" pref="81" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="btnActualizar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnLimpiarCampos" min="-2" pref="81" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="jScrollPane1" pref="742" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -105,51 +112,74 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblReservacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtReservacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cmbCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cmbEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblFechaRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtFechaR" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblEntrada" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtFechaE" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtFechaS" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblFechaSalida" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblReservacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtReservacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="lblWFechasInvalidas" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cmbCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cmbEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblWEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="lblFechaRegistro" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtFechaR" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="lblWFechaR" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblEntrada" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFechaE" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWFechaE" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="lblFechaSalida" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtFechaS" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Component id="lblWFechaS" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblEstado" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cmbEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblWEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnInsertar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnLimpiarCampos" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="250" max="-2" attributes="0"/>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -205,26 +235,15 @@
             <Property name="text" type="java.lang.String" value="Fecha Registro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFechaR">
-          <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblEntrada">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fecha Entrada"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFechaE">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtFechaS">
-        </Component>
         <Component class="javax.swing.JLabel" name="lblFechaSalida">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fecha Salida"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtEstado">
         </Component>
         <Component class="javax.swing.JLabel" name="lblEstado">
           <Properties>
@@ -245,14 +264,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnActualizar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Actualizar"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnConsultar">
@@ -297,6 +308,87 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="txtFechaE">
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="txtFechaS">
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="txtFechaR">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbEstado">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="Selecciona"/>
+                <StringItem index="1" value="Confirmada"/>
+                <StringItem index="2" value="Pendiente"/>
+                <StringItem index="3" value="Cancelada"/>
+                <StringItem index="4" value="Finalizada"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWCliente">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Complete este campo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWEmpleado">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Complete este campo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWFechaE">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Inserte una fecha v&#xe1;lida"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWFechaR">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Inserte una fecha v&#xe1;lida"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWFechaS">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Inserte una fecha v&#xe1;lida"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWEstado">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Complete este campo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblWFechasInvalidas">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Verifique las fechas de entrada y salida"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
